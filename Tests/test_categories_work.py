@@ -16,5 +16,7 @@ def test_open_podrygka(driver_init):
     catalog_button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'a.header-menu-catalog')))
     catalog_button.click()
 
-    accessories_item = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR,'a.relative.t3_s.flex-1.h-21.flex.justify-end.cursor-pointer')))
-    accessories_item.click()
+
+    accessories_item = wait.until(EC.presence_of_element_located((By.XPATH,'//span[starts-with(text(), "Аксес")]')))
+    carusel = driver_init.find_element(By.XPATH, "//ul[@class = 'w-max flex gap-2.5 md:gap-1.5 xl:gap-2']")
+    pass
